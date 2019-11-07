@@ -3,8 +3,12 @@
 }
 
 body {
-  margin-top: -2rem;
-  padding-left: 30%;
+  margin-top: 4rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
 }
 
 .grid {
