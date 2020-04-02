@@ -12,11 +12,13 @@ body {
 }
 
 .grid {
+  animation: 8s linear rotate infinite;
   display: grid;
   grid-template-columns: 14rem 4rem 5rem 4rem 10rem;
   grid-template-rows: auto auto auto 2rem auto;
   transform: rotate(-30deg);
   grid-gap: 0;
+  transform-origin: center;
 }
 
 h1 {
@@ -61,6 +63,7 @@ main h1:nth-child(6) {
 }
 
 main h1:nth-child(7) {
+  animation: 2.5s linear slideY infinite;
   grid-column: 4/5;
   grid-row: 3/5;
   text-align: end;
@@ -88,6 +91,7 @@ main h1:nth-child(9) {
 }
 
 main div:nth-child(10) {
+  animation: 2.5s linear slide infinite;
   background-color: black;
   grid-column: 1/2;
   grid-row: 1;
@@ -98,6 +102,7 @@ main div:nth-child(10) {
 }
 
 main div:nth-child(11) {
+  animation: 2.5s linear slide infinite;
   grid-column: 2/3;
   grid-row: 5/6;
   background-color: black;
@@ -146,5 +151,33 @@ main div:nth-child(11) {
     width: .67rem;
     border-radius: .67rem;
     margin-top: 1rem;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(0, 0);
+  } 50% {
+    transform: translate(200%, 0);
+  } 100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideY {
+  0% {
+    transform: translate(0, 0);
+  } 50% {
+    transform: translate(0, -50%);
+  } 100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  } 100% {
+    transform: rotate(360deg);
   }
 }
